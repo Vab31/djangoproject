@@ -1,0 +1,44 @@
+.icon{
+vertical-align: middle;
+
+}
+.container {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    
+    
+  }
+  
+  img {
+    max-width: 100%
+  }
+  
+  .icon {
+    flex-basis: 40%;
+    margin: 2px;
+  }
+  
+  
+  .cname {
+    font-size:larger;
+    
+  }
+ 
+  .bt1{
+float: left;
+width: 50%;
+
+  }
+  .bt2{
+    float: left;
+    width: 50%;
+    
+  }
+ about {
+    width: 100%;
+    height: fit-content;
+    
+}

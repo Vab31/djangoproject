@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Login Form</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+   </head>
+
+    <style>
+body{
+ margin: 0;
+ padding: 0;
+ background: rgba(0,0,0,0.7) url("https://cdn.pixabay.com/photo/2014/03/22/17/03/the-background-292729_960_720.png");
+ background-size: cover;
+ background-repeat: no-repeat;
+ height: 100vh;
+ font-family: 'Noto Sans TC', sans-serif;
+}
+.center{
+ width: 430px;
+ margin: 130px auto;
+ position: relative;
+}
+.center .header{
+ font-size: 28px;
+ font-weight: bold;
+ color: white;
+ padding: 25px 0 30px 25px;
+ background-color: rgba(163, 42, 11,0.8);
+box-shadow: 9px 9px 5px rgb(255, 13, 13);
+
+ border-radius: 5px 5px 0 0;
+}
+.center form{
+ position: absolute;
+ background: white;
+ width: 100%;
+ padding: 50px 10px 0 30px;
+ box-sizing: border-box;
+ border: 1px solid #6d1c7d;
+ border-radius: 0 0 5px 5px;
+}
+form input{
+ height: 50px;
+ width: 90%;
+ padding: 0 10px;
+ border-radius: 3px;
+ border: 1px solid silver;
+ font-size: 18px;
+ outline: none;
+}
+form input[type="password"]{
+ margin-top: 20px;
+}
+form i{
+ position: absolute;
+ font-size: 25px;
+ color: grey;
+ margin: 15px 0 0 -45px;
+}
+i.fa-lock{
+ margin-top: 35px;
+}
+form input[type="submit"]{
+ margin-top: 40px;
+ margin-bottom: 40px;
+ width: 130px;
+ height: 45px;
+ color: white;
+ cursor: pointer;
+ line-height: 45px;
+ border-radius: 45px;
+ border-radius: 5px;
+ background-color: rgba(163, 42, 11,0.8);
+}
+form input[type="submit"]:hover{
+    background-color: rgba(163, 42, 11,0.8);
+ transition: .5s;
+}
+form a{
+ text-decoration: none;
+ font-size: 18px;
+ color: #7f2092;
+ padding: 0 0 0 20px;
+}
+
+    </style>
+
+   <body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+
+      <div class="center">
+         <div class="header">
+            Sign In Here
+         </div>
+         <form method='post' action='/signin'>
+            {% csrf_token %}
+            <input type="text" placeholder="Email or Username" name="username">
+            <i class="far fa-envelope"></i>
+            <input id="pswrd" type="password" placeholder="Password" name="pass1">
+            <i class="fas fa-lock" onclick="show()"></i>
+            <input type="submit" value="Sign in">
+         </form>
+      </div>
+   </body>
+</html>
